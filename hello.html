@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="js/vue.js"></script>
+<body>
+    <div id="nr">
+      <p v-html="xr"></p>
+      <p v-bind:title="xr">嗨</p>
+      <input type="text" v-bind:value="xr"/>
+      <input type="text" v-model="xr"/>
+      <input type="text" maxlength="10" v-model="xr"/>还可以输入{{10-xr.length}}
+      <input type="text" v-model="a"/>
+      <input type="text" v-model="c"/>和:{{Number(a)+Number(c)}}差:{{Number(a)-Number(c)}}积:{{Number(a)*Number(c)}}商:{{Number(a)/Number(c)}}
+      <br/>
+      <input type="text" v-model.number="a"/>
+      <input type="text" v-model.number="c"/>和:{{a+c}}差:{{a-c}}积:{{a*c}}商:{{a/c}}
+      <input type="checkbox" v-model="xs">
+      <input type="checkbox" v-model="xs1">
+      <span v-if="xs">哈哈哈哈哈哈哈哈</span>
+      <span v-show="xs1">嘿嘿嘿</span>
+      <input type="range" min="0" max="255" v-model="r">{{r}}
+      <input type="range" min="0" max="255" v-model="g">{{g}}
+      <input type="range" min="0" max="255" v-model="b">{{b}}
+      <input type="text" v-model="w">
+      <input type="text" v-model="h">
+      <div v-bind:style="{'width':w+'px','height':h+'px','background':'rgb('+r+','+g+','+b+')'}"></div>
+    </div>
+    <script>
+        console.log(Vue)
+        var vm = new Vue({
+              el:"#nr",
+              data:{
+                 xr:"<h1>sadsad</h1>",
+                 a:"",
+                 c:"",
+                 xs:true,
+                 xs1:false, 
+                  r:0,
+                  g:0,
+                  b:0,
+                  w:200,
+                  h:200,
+              },
+              
+            //   template:"<p>{{xr}}</p>"
+        })
+    console.log(vm)
+    </script>
+</body>
+</html>
